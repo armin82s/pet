@@ -11,6 +11,7 @@ jobs:
   - get: pet-source
     trigger: true
   - task: build-client
+    privileged: true
     file: pet-source/pipeline/build-client.yml
   #- task: journey
   #  file: pet-source/pipeline/journey.yml
