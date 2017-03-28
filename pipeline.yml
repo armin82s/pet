@@ -25,9 +25,9 @@ jobs:
 - name: integration
   plan:
   - aggregate:
-    - get: commit-stage
+    - get: pet-source
     passed: [commit-stage-client, commit-stage-server]
-  - task:
+  - task: example
     config:
       platform: linux
       image_resource:
