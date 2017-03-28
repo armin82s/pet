@@ -13,4 +13,10 @@ inputs:
 #- name: pet-journey
 
 run:
-  path: pet-source/pipeline/journey.sh
+  path: sh
+  args:
+  - -exc
+  - |
+    whoami
+    env
+    mvn -version
