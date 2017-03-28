@@ -19,7 +19,7 @@ run:
   - |
     cd pet-source/pet-server
     mvn spring-boot:run
+    npm install -g bower gulp
     npm install
-    npm install -g bower
     bower install
     gulp protractor
