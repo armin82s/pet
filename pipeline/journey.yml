@@ -1,0 +1,18 @@
+platform: linux
+
+image_resource:
+  type: docker-image
+  source:
+    repository: rowanto/docker-java8-mvn-nodejs-npm
+    tag: 'latest'
+
+inputs:
+- name: pet-source
+
+#outputs:
+#- name: pet-client
+
+run:
+  path: mvn
+  args: ['spring-boot:run']
+  dir: pet-source/pet-server
