@@ -10,9 +10,7 @@ inputs:
 - name: pet-source
 
 #outputs:
-#- name: pet-client
+#- name: pet-journey
 
 run:
-  path: mvn
-  args: ['spring-boot:run']
-  dir: pet-source/pet-server
+  path: pet-source/pipeline/journey.sh
