@@ -1,0 +1,21 @@
+platform: linux
+
+image_resource:
+  type: docker-image
+  source:
+    repository: maven
+    tag: '3.3.9'
+
+inputs:
+- name: pet-source
+
+outputs:
+- name: pet-server
+
+run:
+  path: sh
+  args:
+  - -exc
+  - |
+    echo "Inside build server"
+    ls -la
