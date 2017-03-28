@@ -9,9 +9,10 @@ image_resource:
 inputs:
 - name: pet-source
 
+outputs:
+- name: pet-server
+
 run:
   path: mvn
-  args:
-  - clean
-  - install
+  args: ['clean', 'install']
   dir: pet-source/pet-server
