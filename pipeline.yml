@@ -22,16 +22,27 @@ jobs:
   - task: build-server
     file: pet-source/pipeline/build-server-2.yml
 
-#- name: deploy-stage-client
+- name: deploy-stage-client
+  plan:
+  - get: pet-source
+    passed: [commit-stage-client]
+    trigger: true
+  - task: deploy-client
+    file: pet-source/pipeline/build-client-2.yml
 
-
-#- name: deploy-stage-server
+- name: deploy-stage-server
+  plan:
+  - get: pet-source
+    passed: [commit-stage-server]
+    trigger: true
+  - task: deploy-server
+    file: pet-source/pipeline/build-server-2.yml
 
 - name: integration
   plan:
   - aggregate:
     - get: pet-source
-      passed: [commit-stage-client, commit-stage-server]
+      passed: [deploy-stage-client, deploy-stage-server]
       trigger: true
-  - task: example
+  - task: journey-test
     file: pet-source/pipeline/journey.yml
