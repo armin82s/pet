@@ -31,7 +31,6 @@ jobs:
   plan:
   - aggregate:
     - get: pet-source
-      trigger: true
       passed: [commit-stage-client, commit-stage-server]
   - task: example
     file: pet-source/pipeline/journey.yml
