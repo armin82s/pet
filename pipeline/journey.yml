@@ -17,7 +17,9 @@ run:
   args:
   - -exc
   - |
-    pwd
-    ls
     cd pet-source/pet-server
     mvn spring-boot:run
+    npm install
+    npm install -g bower
+    bower install
+    gulp protractor
