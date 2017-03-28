@@ -17,4 +17,6 @@ run:
   args:
   - -exc
   - |
+    pwd
+    cd pet-server
     mvn spring-boot:run
