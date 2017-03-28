@@ -9,7 +9,7 @@ resources:
   source: {interval: 1m}
 
 jobs:
-- name: test
+- name: build
   plan:
   - aggregate:
     - get: pet-source
