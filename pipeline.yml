@@ -10,7 +10,7 @@ jobs:
   plan:
   - get: pet-source
     trigger: true
-  - task: build-server
-    file: pet-source/pipeline/build-server.yml
+  #- task: build-server
+  #  file: pet-source/pipeline/build-server.yml
   - task: build-client
     file: pet-source/pipeline/build-client.yml
