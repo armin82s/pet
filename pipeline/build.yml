@@ -1,1 +1,17 @@
 platform: linux
+
+image_resource:
+  type: docker-image
+  source:
+    repository: maven
+    tag: '3.3.9'
+
+inputs:
+- name: pet-source
+
+run:
+  path: mvn
+  args:
+  - clean
+  - install
+  dir: pet-server
