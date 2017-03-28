@@ -17,7 +17,7 @@ run:
   args:
   - -exc
   - |
-    cd pet-source
+    cd pet-source/pet-client
     npm install -g gulp bower
     npm install
     bower install --allow-root
