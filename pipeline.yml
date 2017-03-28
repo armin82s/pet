@@ -8,9 +8,8 @@ resources:
 jobs:
 - name: commit-stage
   plan:
-  - aggregate:
-    - get: pet-source
-      trigger: true
+  - get: pet-source
+    trigger: true
   - task: build
     file: pet-source/pipeline/build.yml
 
