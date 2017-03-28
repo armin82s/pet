@@ -20,6 +20,6 @@ run:
     cd pet-source
     npm install -g gulp bower
     npm install
-    bower install
+    bower install --allow-root
     gulp unit-tests
     gulp build
