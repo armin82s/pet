@@ -15,7 +15,7 @@ jobs:
   #- task: journey
   #  file: pet-source/pipeline/journey.yml
 
--name: commit-stage-server
+- name: commit-stage-server
   plan:
   - get: pet-source
     trigger: true
