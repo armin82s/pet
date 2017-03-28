@@ -26,7 +26,7 @@ jobs:
   plan:
   - aggregate:
     - get: pet-source
-    passed: [commit-stage-client, commit-stage-server]
+      passed: [commit-stage-client, commit-stage-server]
   - task: example
     config:
       platform: linux
