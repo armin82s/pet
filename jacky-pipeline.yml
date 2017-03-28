@@ -4,9 +4,9 @@ resources:
   source:
     uri: https://github.com/xtangle/pet.git
     branch: master
-- name: every-1m
+- name: every-5m
   type: time
-  source: {interval: 1m}
+  source: {interval: 5m}
 
 jobs:
 - name: build
@@ -14,7 +14,7 @@ jobs:
   - aggregate:
     - get: pet-source
       trigger: true
-    - get: every-1m
+    - get: every-5m
       trigger: true
   - task: build
     file: pet-source/pipeline/build.yml
