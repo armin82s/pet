@@ -15,4 +15,4 @@ outputs:
 run:
   path: mvn
   args: ['clean', 'install']
-  dir: pet-source/pet-server
+  dir: pet-source

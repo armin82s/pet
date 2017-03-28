@@ -22,19 +22,15 @@ jobs:
   - task: build-server
     file: pet-source/pipeline/build-server.yml
 
+#- name: deploy-stage-client
+
+
+#- name: deploy-stage-server
+
 - name: integration
   plan:
   - aggregate:
     - get: pet-source
       passed: [commit-stage-client, commit-stage-server]
   - task: example
-    config:
-      platform: linux
-      image_resource:
-        type: docker-image
-        source:
-          repository: node
-          tag: '7.7.4'
-      run:
-        path: echo
-        args: ["Hello guys"]
+    file: pet-source/pipeline/journey.yml
