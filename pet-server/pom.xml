@@ -182,8 +182,8 @@
 							<server>Bluemix</server>
 							<target>https://api.ng.bluemix.net</target>
 							<appname>pet-server</appname>
-							<org>tim.eapen@intelliware.ca</org>
-							<space>dev</space>
+							<org>XtremeLearning</org>
+							<space>concourse-dev</space>
 							<instances>1</instances>
 							<memory>512</memory>
 						</configuration>
