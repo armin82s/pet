@@ -17,4 +17,4 @@ jobs:
     - get: every-1m
       trigger: true
   - task: build
-    file: 'pipeline/build.yml'
+    file: build.yml
