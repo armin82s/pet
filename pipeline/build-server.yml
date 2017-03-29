@@ -22,6 +22,8 @@ run:
   args:
   - -exc
   - |
+    cd pet-source
     mvn package
+    cd ..
     mv pet-source/pet-server/target/*.jar built-pet-server
     mv pet-source/pet-server/deploy-server.yml built-pet-server
