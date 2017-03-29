@@ -11,9 +11,18 @@ inputs:
 
 outputs:
 - name: built-pet-server
-  path: pet-source/pet-server/target
+  path: pet-source/pet-server/target/
 
 run:
   path: mvn
-  args: ['clean', 'install', '-X']
+  args: ['clean', 'install']
   dir: pet-source
+
+run:
+  path: sh
+  args:
+  - -exc
+  - |
+    mvn package
+    mv pet-source/pet-server/target/*.jar built-pet-server
+    mv pet-source/pet-server/deploy-server.yml built-pet-server
