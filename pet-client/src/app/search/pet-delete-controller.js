@@ -16,7 +16,7 @@
 
     function deletePet(petId) {
       $log.info("Deleting pet id: ", petId);
-      var url = "/pet" + "/" + petId;
+      var url = "/api/pet" + "/" + petId;
       $http.delete(url)
         .then(function () {
             $modalInstance.close(true);

@@ -17,7 +17,7 @@
 
     function search(petId) {
       $log.info("Searching for pet with id: ", petId);
-      var url = "/pet" + "/" + petId;
+      var url = "/api/pet" + "/" + petId;
       return $http.get(url)
                   .then(getPet)
     }

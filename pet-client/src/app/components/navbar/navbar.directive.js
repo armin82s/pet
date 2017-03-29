@@ -47,7 +47,7 @@
       };
 
       vm.logout = function() {
-        $http.post('/signout  ', {}).finally(function() {
+        $http.post('/api/signout  ', {}).finally(function() {
           $rootScope.authenticated = false;
           principalService.clearPrincipal();
           $location.path('/');

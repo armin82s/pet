@@ -24,7 +24,7 @@ public class PetController {
 	@Autowired
 	private IPetService petService;
 	
-	@RequestMapping(path="/pet", method=RequestMethod.GET)
+	@RequestMapping(path="/api/pet", method=RequestMethod.GET)
 	@ResponseBody
 	public Iterable<Pet> getPets() {
 		Iterable<Pet> allPets = petService.getAllPets();
@@ -32,7 +32,7 @@ public class PetController {
 		return allPets;
 	}
 	
-	@RequestMapping(path="/pet/{id}", method=RequestMethod.GET)
+	@RequestMapping(path="/api/pet/{id}", method=RequestMethod.GET)
 	@ResponseBody
 	public Pet getPet(@PathVariable Long id) {
 		Pet pet = petService.getPet(id);
@@ -40,7 +40,7 @@ public class PetController {
 		return pet;
 	}
 	
-	@RequestMapping(path="/pet", method=RequestMethod.POST)
+	@RequestMapping(path="/api/pet", method=RequestMethod.POST)
 	@ResponseBody
 	public Long addPet(@RequestBody AddPetRequest request) {
 		LOGGER.info("Creating pet with request: {}", request);
@@ -54,7 +54,7 @@ public class PetController {
 		return pet;
 	}
 	
-	@RequestMapping(path="/pet/{id}", method=RequestMethod.DELETE)
+	@RequestMapping(path="/api/pet/{id}", method=RequestMethod.DELETE)
 	@ResponseBody
 	public void deletePet(@PathVariable Long id) {
 		LOGGER.info("Deleting pet with id: {}", id);

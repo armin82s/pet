@@ -23,7 +23,7 @@
           + credentials.password)
       } : {};
 
-      return $http.get('/user', {
+      return $http.get('/api/user', {
         headers: headers
       }).success(function (data) {
         principalService.setPrincipal(data.principal);

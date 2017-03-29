@@ -17,14 +17,14 @@ public class AuthController {
 	
 	public static final Logger LOGGER = LoggerFactory.getLogger(AuthController.class);
 
-	@RequestMapping(path="/user", method=RequestMethod.GET)
+	@RequestMapping(path="/api/user", method=RequestMethod.GET)
 	@ResponseBody
 	public Principal user(Principal user) {
 		LOGGER.info("Requesting principal {}", user);
 		return user;
 	}
 	
-	@RequestMapping(path="/signout", method=RequestMethod.POST)
+	@RequestMapping(path="/api/signout", method=RequestMethod.POST)
 	@ResponseBody
 	public void signout() {
 		LOGGER.info("Signing out");
