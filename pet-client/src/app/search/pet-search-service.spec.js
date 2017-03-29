@@ -21,7 +21,7 @@
 
     it('pet search should return data', function() {
       var petId = 1;
-      $httpBackend.when('GET', '/pet/' + petId).respond(200, {"name" : "Santo", "description" : "Baby"});
+      $httpBackend.when('GET', '/api/pet/' + petId).respond(200, {"name" : "Santo", "description" : "Baby"});
 
       var pet;
       petSearchService.search(petId)
@@ -35,7 +35,7 @@
 
     it('pet search should log error', function() {
       var petId = 1;
-      $httpBackend.when('GET', '/pet/' + petId).respond(500);
+      $httpBackend.when('GET', '/api/pet/' + petId).respond(500);
 
       var searchError;
       petSearchService.search(petId)

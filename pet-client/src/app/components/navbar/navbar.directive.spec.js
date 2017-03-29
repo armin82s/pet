@@ -22,7 +22,7 @@
 
       spyOn(loginService, 'login');
 
-      _$httpBackend_.expectGET('/user').respond(200);
+      _$httpBackend_.expectGET('/api/user').respond(200);
 
       timeInMs = new Date();
       timeInMs = timeInMs.setHours(timeInMs.getHours() - 24);

@@ -22,7 +22,7 @@
     })
 
     it('login success', function() {
-      $httpBackend.when('GET', '/user').respond(200, {"principal" : {"name" : "Sandhra"}});
+      $httpBackend.when('GET', '/api/user').respond(200, {"principal" : {"name" : "Sandhra"}});
       spyOn(principalService, 'setPrincipal');
 
       var credentials = {"name" : "Sandhra", "password" : "Baby"};
@@ -35,7 +35,7 @@
     });
 
     it('login fail', function() {
-      $httpBackend.when('GET', '/user').respond(500);
+      $httpBackend.when('GET', '/api/user').respond(500);
       spyOn(principalService, 'setPrincipal');
 
       var credentials = {"name" : "Sandhra", "password" : "Baby"};

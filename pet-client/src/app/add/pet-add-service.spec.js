@@ -19,7 +19,7 @@
     });
 
     it('pet add service adds pet', function() {
-      $httpBackend.when('POST', '/pet').respond(200, 1);
+      $httpBackend.when('POST', '/api/pet').respond(200, 1);
 
       var petId;
       petAddService.add("Santo", "Baby")

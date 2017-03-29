@@ -21,7 +21,7 @@
         limit = 30;
       }
 
-      return $http.get(apiHost + '/contributors?per_page=' + limit)
+      return $http.get(apiHost + '/api/contributors?per_page=' + limit)
         .then(getContributorsComplete)
         .catch(getContributorsFailed);
 

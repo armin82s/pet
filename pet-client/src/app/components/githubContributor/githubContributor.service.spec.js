@@ -29,7 +29,7 @@
       });
 
       it('should return data', function() {
-        $httpBackend.when('GET',  githubContributor.apiHost + '/contributors?per_page=1').respond(200, [{pprt: 'value'}]);
+        $httpBackend.when('GET',  githubContributor.apiHost + '/api/contributors?per_page=1').respond(200, [{pprt: 'value'}]);
         var data;
         githubContributor.getContributors(1).then(function(fetchedData) {
           data = fetchedData;
@@ -41,7 +41,7 @@
       });
 
       it('should define a limit per page as default value', function() {
-        $httpBackend.when('GET',  githubContributor.apiHost + '/contributors?per_page=30').respond(200, new Array(30));
+        $httpBackend.when('GET',  githubContributor.apiHost + '/api/contributors?per_page=30').respond(200, new Array(30));
         var data;
         githubContributor.getContributors().then(function(fetchedData) {
           data = fetchedData;
@@ -52,7 +52,7 @@
       });
 
       it('should log a error', function() {
-        $httpBackend.when('GET',  githubContributor.apiHost + '/contributors?per_page=1').respond(500);
+        $httpBackend.when('GET',  githubContributor.apiHost + '/api/contributors?per_page=1').respond(500);
         githubContributor.getContributors(1);
         $httpBackend.flush();
         expect($log.error.logs).toEqual(jasmine.stringMatching('XHR Failed for'));
