@@ -23,9 +23,7 @@ run:
     bower install --allow-root
     gulp test
     gulp
-    cd ../..
-    mv pet-source/pet-client/* built-pet-client
-    cd built-pet-client
     cp manifest.yml dist
     cp Staticfile dist
-
+    cd ../..
+    mv pet-source/pet-client/dist/* built-pet-client
