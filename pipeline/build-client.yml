@@ -22,4 +22,4 @@ run:
     npm install
     bower install --allow-root
     gulp test
-    gulp build
+    gulp

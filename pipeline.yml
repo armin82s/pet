@@ -5,6 +5,26 @@ resources:
     uri: https://github.com/xtangle/pet.git
     branch: master
 
+- name: cf-dev-space
+  type: cf
+  source:
+    api: https://api.run.pivotal.io
+    username: jacky.xu
+    password: Vq7n3Jkwr
+    organization: XtremeLearning
+    space: concourse-dev
+    skip_cert_check: false
+
+- name: cf-qa-space
+  type: cf
+  source:
+    api: https://api.run.pivotal.io
+    username: jacky.xu
+    password: Vq7n3Jkwr
+    organization: XtremeLearning
+    space: concourse-qa
+    skip_cert_check: false
+
 jobs:
 - name: commit-stage-client
   plan:
@@ -12,8 +32,8 @@ jobs:
     trigger: true
   - task: build-client
     file: pet-source/pipeline/build-client.yml
-  #- task: journey
-  #  file: pet-source/pipeline/journey.yml
+  #- task: release-client
+  #  file: pet-source/pipeline/release-client.yml
 
 - name: commit-stage-server
   plan:
@@ -21,6 +41,8 @@ jobs:
     trigger: true
   - task: build-server
     file: pet-source/pipeline/build-server.yml
+  #- task: release-server
+  #  file: pet-source/pipeline/release-server.yml
 
 - name: deploy-stage-client
   plan:
