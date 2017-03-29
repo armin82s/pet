@@ -2,7 +2,7 @@ applications:
 - name: pet-client
   memory: 128M
   instances: 1
-  host: petstore-concourse-dev-client
+  host: petstore-concourse-dev
   domain: pcf-apps.intware.com
   buildpack: staticfile_buildpack
   path: ./
