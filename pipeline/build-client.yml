@@ -10,7 +10,7 @@ inputs:
 - name: pet-source
 
 outputs:
-- name: pet-client
+- name: built-pet-client
 
 run:
   path: sh

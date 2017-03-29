@@ -10,6 +10,7 @@ resources:
   source:
     user: xtangle
     repository: fake-repository
+    github_api_url: https://github.com/xtangle/fake-repository.git
 
 jobs:
 - name: commit-stage-client
@@ -26,7 +27,7 @@ jobs:
   - get: pet-source
     trigger: true
   - task: build-server
-    file: pet-source/pipeline/build-server.yml
+    file: pet-source/pipeline/build-server-2.yml
   - put: gh-release
     params:
       name: pet-source/pipeline/release.txt

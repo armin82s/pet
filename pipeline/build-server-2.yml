@@ -10,7 +10,7 @@ inputs:
 - name: pet-source
 
 outputs:
-- name: pet-server
+- name: built-pet-server
 
 run:
   path: sh
