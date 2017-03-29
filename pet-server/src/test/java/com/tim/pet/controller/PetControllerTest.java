@@ -55,7 +55,7 @@ public class PetControllerTest {
 	@Test
 	public void testGetPet() {
 		when().
-			get("pet/{id}", pet.getId()).
+			get("api/pet/{id}", pet.getId()).
 		then().
 			statusCode(HttpStatus.SC_OK).
 			body("name", is("Blackie")).
@@ -73,7 +73,7 @@ public class PetControllerTest {
 			contentType(ContentType.JSON).
 			body(newPet).
 		when().
-			post("pet").
+			post("api/pet").
 		then().
 			statusCode(HttpStatus.SC_OK).
 			body(notNullValue());
@@ -82,7 +82,7 @@ public class PetControllerTest {
 	@Test
 	public void testDeletePet() {
 		when().
-			delete("pet/{id}", pet.getId()).
+			delete("api/pet/{id}", pet.getId()).
 		then()
 			.statusCode(HttpStatus.SC_OK);
 	}

@@ -35,7 +35,7 @@ public class AuthControllerTest {
 		given().
 			auth().basic("bad", "user").
 		when().
-			get("user").
+			get("api/user").
 		then().
 			statusCode(HttpStatus.SC_UNAUTHORIZED);
 	}
@@ -45,7 +45,7 @@ public class AuthControllerTest {
 		given().
 			auth().basic("santo", "baby").
 		when().
-			get("user").
+			get("api/user").
 		then().
 			statusCode(HttpStatus.SC_OK).
 			body("name", is("santo"));
@@ -56,12 +56,12 @@ public class AuthControllerTest {
 		given().
 			auth().basic("santo", "baby").
 		when().
-			post("signout").
+			post("api/signout").
 		then().
 			statusCode(HttpStatus.SC_OK);
 		
 		when().
-			get("user").
+			get("api/user").
 		then().
 			statusCode(HttpStatus.SC_UNAUTHORIZED);
 

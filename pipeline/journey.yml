@@ -17,5 +17,6 @@ run:
   args:
   - -exc
   - |
+    npm install -g protractor
     cd pet-source/pet-client
-    npm
+    protractor protractor-dist.conf.js
