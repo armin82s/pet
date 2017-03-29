@@ -10,7 +10,7 @@ resources:
   source:
     user: xtangle
     repository: fake-repository
-    access_token: 86516b6255c92a9c359cf15616c903a800dcda71
+    access_token: 0461b1656f6f7a520445bf8e54f15ebac25cac4b
 
 jobs:
 - name: commit-stage-client
