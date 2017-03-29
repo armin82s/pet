@@ -25,5 +25,6 @@ run:
     gulp
     cp manifest.yml dist
     cp Staticfile dist
+    chmod 755 dist -R
     cd ../..
     mv pet-source/pet-client/dist/* built-pet-client

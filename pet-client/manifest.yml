@@ -5,3 +5,4 @@ applications:
   host: petstore-concourse-dev-client
   domain: pcf-apps.intware.com
   buildpack: staticfile_buildpack
+  path: ./
