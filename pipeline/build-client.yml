@@ -23,4 +23,6 @@ run:
     bower install --allow-root
     gulp test
     gulp
+    cd ../../built-pet-client
+    cp -rf pet-source/pet-client/* built-pet-client
 
