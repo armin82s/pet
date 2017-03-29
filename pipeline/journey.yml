@@ -3,8 +3,8 @@ platform: linux
 image_resource:
   type: docker-image
   source:
-    repository: rowanto/docker-java8-mvn-nodejs-npm
-    tag: 'latest'
+    repository: node
+    tag: '7.7.4'
 
 inputs:
 - name: pet-source
@@ -17,4 +17,5 @@ run:
   args:
   - -exc
   - |
-    ls -la
+    cd pet-source/pet-client
+    npm

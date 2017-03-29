@@ -25,7 +25,7 @@ jobs:
     file: pet-source/pipeline/build-client.yml
   - put: cf-dev-space
     params:
-      manifest: built-pet-client/deploy-client.yml
+      manifest: built-pet-client/manifest.yml
 
 - name: commit-stage-server
   plan:
@@ -35,7 +35,7 @@ jobs:
     file: pet-source/pipeline/build-server.yml
   - put: cf-dev-space
     params:
-      manifest: built-pet-server/deploy-server.yml
+      manifest: built-pet-server/manifest.yml
 
 - name: integration
   plan:
