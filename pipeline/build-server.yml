@@ -11,8 +11,9 @@ inputs:
 
 outputs:
 - name: built-pet-server
+- path: pet-source
 
 run:
   path: mvn
-  args: ['clean', 'install']
+  args: ['clean', 'install', '-X']
   dir: pet-source

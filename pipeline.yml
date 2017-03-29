@@ -13,7 +13,7 @@ resources:
     password: Vq7n3Jkwr
     organization: XtremeLearning
     space: concourse-dev
-    skip_cert_check: false
+    skip_cert_check: true
 
 jobs:
 - name: commit-stage-client
@@ -33,7 +33,7 @@ jobs:
     file: pet-source/pipeline/build-server-2.yml
   - put: cf-dev-space
     params:
-      manifest: pet-source/deploy-server.yml
+      manifest: built-pet-server/deploy-server.yml
 
 - name: deploy-stage-client
   plan:
