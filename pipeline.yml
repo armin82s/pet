@@ -22,8 +22,9 @@ jobs:
     trigger: true
   - task: build-client
     file: pet-source/pipeline/build-client.yml
-  #- task: release-client
-  #  file: pet-source/pipeline/release-client.yml
+  - put: cf-dev-space
+    params:
+      manifest: built-pet-server/deploy-client.yml
 
 - name: commit-stage-server
   plan:
@@ -35,19 +36,11 @@ jobs:
     params:
       manifest: built-pet-server/deploy-server.yml
 
-- name: deploy-stage-client
-  plan:
-  - get: pet-source
-    passed: [commit-stage-client]
-    trigger: true
-  - task: deploy-client
-    file: pet-source/pipeline/build-client-2.yml
-
 - name: integration
   plan:
   - aggregate:
     - get: pet-source
-      passed: [deploy-stage-client]
+      passed: [commit-stage-client, commit-stage-server]
       trigger: true
   - task: journey-test
     file: pet-source/pipeline/journey.yml

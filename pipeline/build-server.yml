@@ -13,11 +13,6 @@ outputs:
 - name: built-pet-server
 
 run:
-  path: mvn
-  args: ['clean', 'install']
-  dir: pet-source
-
-run:
   path: sh
   args:
   - -exc

@@ -1,7 +1,7 @@
 applications:
-- name: pet
+- name: pet-server
   memory: 1G
   instances: 2
-  host: petstore-concourse-dev
+  host: petstore-concourse-dev-server
   domain: pcf-apps.intware.com
   path: ./pet-server-0.0.1-SNAPSHOT.jar
