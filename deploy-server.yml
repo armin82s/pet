@@ -1,0 +1,7 @@
+applications:
+- name: pet
+  memory: 1G
+  instances: 2
+  host: petstore-concourse-dev
+  domain: pcf-apps.intware.com
+  path: ./built-pet-server/target/*.jar

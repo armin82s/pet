@@ -5,12 +5,15 @@ resources:
     uri: https://github.com/xtangle/pet.git
     branch: master
 
-- name: gh-release
-  type: github-release
+- name: cf-dev-space
+  type: cf
   source:
-    user: xtangle
-    repository: fake-repository
-    access_token: 0461b1656f6f7a520445bf8e54f15ebac25cac4b
+    api: https://api.run.pivotal.io
+    username: jacky.xu
+    password: Vq7n3Jkwr
+    organization: XtremeLearning
+    space: concourse-dev
+    skip_cert_check: false
 
 jobs:
 - name: commit-stage-client
@@ -27,13 +30,10 @@ jobs:
   - get: pet-source
     trigger: true
   - task: build-server
-    file: pet-source/pipeline/build-server-2.yml
-  - put: gh-release
+    file: pet-source/pipeline/build-server.yml
+  - put: cf-dev-space
     params:
-      name: pet-source/pipeline/release.txt
-      tag: pet-source/pipeline/release.txt
-      globs:
-      - pet-source/built-pet-server/target/*.jar
+      manifest: pet-source/deploy-server.yml
 
 - name: deploy-stage-client
   plan:
@@ -43,19 +43,11 @@ jobs:
   - task: deploy-client
     file: pet-source/pipeline/build-client-2.yml
 
-- name: deploy-stage-server
-  plan:
-  - get: pet-source
-    passed: [commit-stage-server]
-    trigger: true
-  - task: deploy-server
-    file: pet-source/pipeline/deploy-server.yml
-
 - name: integration
   plan:
   - aggregate:
     - get: pet-source
-      passed: [deploy-stage-client, deploy-stage-server]
+      passed: [deploy-stage-client]
       trigger: true
   - task: journey-test
     file: pet-source/pipeline/journey.yml
