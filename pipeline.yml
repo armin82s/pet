@@ -30,7 +30,7 @@ jobs:
   - get: pet-source
     trigger: true
   - task: build-server
-    file: pet-source/pipeline/build-server-2.yml
+    file: pet-source/pipeline/build-server.yml
   - put: cf-dev-space
     params:
       manifest: built-pet-server/deploy-server.yml
