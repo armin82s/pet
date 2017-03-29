@@ -4,4 +4,4 @@ applications:
   instances: 2
   host: petstore-concourse-dev
   domain: pcf-apps.intware.com
-  path: ./*.jar
+  path: ./pet-server-0.0.1-SNAPSHOT.jar
