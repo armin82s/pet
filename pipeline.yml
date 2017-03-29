@@ -10,7 +10,7 @@ resources:
   source:
     user: xtangle
     repository: fake-repository
-    github_api_url: https://github.com/xtangle/fake-repository.git
+    access_token: 86516b6255c92a9c359cf15616c903a800dcda71
 
 jobs:
 - name: commit-stage-client
