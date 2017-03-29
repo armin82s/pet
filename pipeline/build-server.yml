@@ -21,4 +21,4 @@ run:
     mvn package
     cd ..
     mv pet-source/pet-server/target/*.jar built-pet-server
-    mv pet-source/pet-server/deploy-server.yml built-pet-server
+    mv pet-source/pet-server/manifest.yml built-pet-server
