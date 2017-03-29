@@ -11,7 +11,7 @@ inputs:
 
 outputs:
 - name: built-pet-server
-  path: pet-source/pet-server
+  path: pet-source/pet-server/target
 
 run:
   path: mvn
