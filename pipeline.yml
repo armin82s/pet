@@ -4,6 +4,7 @@ resources:
   source:
     uri: https://github.com/xtangle/pet.git
     branch: master
+  check_every: 10s
 
 - name: cf-dev-space
   type: cf
