@@ -25,4 +25,7 @@ run:
     gulp
     cd ../..
     mv pet-source/pet-client/* built-pet-client
+    cd built-pet-client
+    cp manifest.yml dist
+    cp Staticfile dist
 
